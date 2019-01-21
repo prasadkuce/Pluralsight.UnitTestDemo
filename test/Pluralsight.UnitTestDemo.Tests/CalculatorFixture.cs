@@ -1,3 +1,4 @@
+using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Pluralsight.UnitTestDemo.Api;
 
@@ -74,7 +75,18 @@ namespace Pluralsight.UnitTestDemo.Tests
             //act
             var result = SystemUnderTest.Divide(val1, val2);
             //assert
-            Assert.AreEqual<int>(expected, result, "Subtract Failed");
+            Assert.AreEqual<int>(expected, result, "Division Failed");
+        }
+        [TestMethod]
+        [ExpectedException((typeof(DivideByZeroException)))]
+        public void DivideByZeroException()
+        {
+            //arrange
+            var val1 = 2;
+            var val2 = 0;
+            var expected = 2;
+            //act
+            var result = SystemUnderTest.Divide(val1, val2);
         }
     }
 }

@@ -18,6 +18,8 @@ namespace Pluralsight.UnitTestDemo.Api
         }
         public int Divide(int val1, int val2)
         {
+            if(val2 == 0)
+                throw new DivideByZeroException();
             return val1 / val2;
         }
     }

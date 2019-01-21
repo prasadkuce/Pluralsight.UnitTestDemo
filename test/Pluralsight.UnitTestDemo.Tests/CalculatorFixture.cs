@@ -78,13 +78,12 @@ namespace Pluralsight.UnitTestDemo.Tests
             Assert.AreEqual<int>(expected, result, "Division Failed");
         }
         [TestMethod]
-        [ExpectedException((typeof(DivideByZeroException)))]
-        public void DivideByZeroException()
+        [ExpectedException((typeof(InvalidOperationException)))]
+        public void DivideByZeroThrowsException()
         {
             //arrange
             var val1 = 2;
             var val2 = 0;
-            var expected = 2;
             //act
             var result = SystemUnderTest.Divide(val1, val2);
         }

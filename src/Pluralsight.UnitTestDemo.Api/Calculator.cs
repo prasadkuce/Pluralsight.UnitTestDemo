@@ -19,7 +19,8 @@ namespace Pluralsight.UnitTestDemo.Api
         public int Divide(int val1, int val2)
         {
             if(val2 == 0)
-                throw new DivideByZeroException();
+                throw new InvalidOperationException(
+                    "Argument cannot be zero.");
             return val1 / val2;
         }
     }
